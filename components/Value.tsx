@@ -1,6 +1,11 @@
 import React from 'react';
 import { ArrowRight, Check, X } from 'lucide-react';
 import { ROICalculator } from './ROICalculator';
+import { LandingCopy } from '../types';
+
+interface ValueProps {
+  customContent?: LandingCopy['valueSection'];
+}
 
 const PiggyBankGraphic = () => (
   <svg viewBox="0 0 200 200" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -159,10 +164,21 @@ const ArrowConnector = () => (
    </div>
 );
 
-export const Value: React.FC = () => {
+export const Value: React.FC<ValueProps> = ({ customContent }) => {
   const scrollToCalculator = () => {
     document.getElementById('roi-calculator')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const headline = customContent?.headline || <>Growth Without The <span className="text-warho-purple">Headcount.</span></>;
+  const subheadline = customContent?.subheadline || "Growing your business shouldn't mean drowning in work or hiring expensive staff. WarHo builds simple systems that do the work for you.";
+
+  // Default points if not customized
+  const points = customContent?.points || [
+    "One-time cost, no monthly fees",
+    "You own the system (it's your asset)",
+    "Automates work 24/7 (like a free employee)",
+    "Connects your existing tools (Excel, Gmail)"
+  ];
 
   return (
     <section className="py-24 bg-zinc-950 relative">
@@ -172,17 +188,17 @@ export const Value: React.FC = () => {
         <div className="mb-24">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-6">
-              Growth Without The <span className="text-warho-purple">Headcount.</span>
+              {headline}
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-              Growing your business shouldn't mean drowning in work or hiring expensive staff. WarHo builds simple systems that do the work for you.
+              {subheadline}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch mb-24">
             {/* The Old Way */}
             <div className="p-8 border border-white/10 rounded-2xl bg-zinc-900/30 grayscale opacity-70 hover:opacity-100 transition-opacity">
-              <h3 className="text-xl font-bold text-gray-400 mb-6">The "Growing Pains" Trap</h3>
+              <h3 className="text-xl font-bold text-gray-400 mb-6">The "Old Way" Trap</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <X className="text-red-500 w-5 h-5 mt-1 flex-shrink-0" />
@@ -210,22 +226,12 @@ export const Value: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold text-white mb-6">The WarHo Growth Model</h3>
               <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-3">
-                  <Check className="text-warho-yellow w-5 h-5 mt-1 flex-shrink-0" />
-                  <span className="text-white">One-time cost, no monthly fees</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-warho-yellow w-5 h-5 mt-1 flex-shrink-0" />
-                  <span className="text-white">You own the system (it's your asset)</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-warho-yellow w-5 h-5 mt-1 flex-shrink-0" />
-                  <span className="text-white">Automates work 24/7 (like a free employee)</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-warho-yellow w-5 h-5 mt-1 flex-shrink-0" />
-                  <span className="text-white">Connects your existing tools (Excel, Gmail)</span>
-                </li>
+                {points.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Check className="text-warho-yellow w-5 h-5 mt-1 flex-shrink-0" />
+                    <span className="text-white">{point}</span>
+                  </li>
+                ))}
               </ul>
 
               <div className="mt-auto pt-6 border-t border-white/10">

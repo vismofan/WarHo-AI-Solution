@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WarHo AI Solutions - Enterprise Strategy for Small Business</title>
+    <meta name="description" content="Affordable AI consulting for small business owners. Enterprise-level strategy to help you scale without the high cost.">
+    
+    <!-- Tailwind CSS (via CDN for simplicity) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              warho: {
+                purple: '#4B0082',
+                dark: '#050505',
+                yellow: '#FFD700',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body { background-color: #050505; color: #ffffff; }
+        .hero-pattern {
+            background-image: radial-gradient(#4B0082 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <!-- Simple SVG Logo -->
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="45" stroke="#4B0082" stroke-width="2" />
+                    <path d="M30 70 L50 30 L70 70" stroke="#FFD700" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="flex flex-col">
+                    <span class="font-black text-xl leading-none">WARHO AI</span>
+                    <span class="text-[10px] text-warho-yellow font-bold uppercase tracking-widest">Solutions</span>
+                </div>
+            </div>
+            
+            <a href="#contact" class="bg-warho-yellow text-black font-bold px-4 py-2 rounded text-sm hover:bg-yellow-300 transition-colors">
+                Get Free Strategy
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
+        <div class="absolute inset-0 hero-pattern opacity-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+        
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="inline-block px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-6">
+                <span class="text-xs font-bold text-warho-yellow tracking-widest uppercase">For Small Business Owners</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                Big Tech Strategy. <br/>
+                <span class="text-warho-purple">Small Business Budget.</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto font-light">
+                We simplify enterprise-grade technology so you can grow revenue and cut costs—no technical skills needed.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#contact" class="px-8 py-4 bg-warho-yellow text-black font-bold rounded-lg hover:bg-yellow-300 transition-colors">
+                    Start Your Growth
+                </a>
+                <a href="#services" class="px-8 py-4 border border-white/20 text-white font-bold rounded-lg hover:bg-white/5 transition-colors">
+                    How It Works
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="py-24 bg-zinc-900 border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 border border-white/10 rounded-xl bg-black hover:border-warho-yellow transition-colors">
+                    <h3 class="text-2xl font-bold text-white mb-4">Automation</h3>
+                    <p class="text-gray-400">Stop doing busy work. We build systems that handle emails, data entry, and scheduling automatically.</p>
+                </div>
+                <div class="p-8 border border-white/10 rounded-xl bg-black hover:border-warho-purple transition-colors">
+                    <h3 class="text-2xl font-bold text-white mb-4">Integration</h3>
+                    <p class="text-gray-400">We connect the tools you already use (Excel, Gmail, QuickBooks) so they talk to each other.</p>
+                </div>
+                <div class="p-8 border border-white/10 rounded-xl bg-black hover:border-blue-500 transition-colors">
+                    <h3 class="text-2xl font-bold text-white mb-4">Ownership</h3>
+                    <p class="text-gray-400">No monthly subscription fees. We build the solution, hand you the keys, and you own it forever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-black">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <h2 class="text-4xl font-black mb-6">Ready to Scale?</h2>
+            <p class="text-gray-400 mb-12 text-lg">Send us a quick email. Tell us your biggest business headache, and we'll tell you if AI can fix it.</p>
+            
+            <div class="bg-zinc-900 border border-white/10 rounded-2xl p-8 md:p-12">
+                <div class="flex flex-col items-center gap-6">
+                    <a href="mailto:warhoai@gmail.com" class="text-2xl md:text-4xl font-bold text-warho-yellow hover:underline">
+                        warhoai@gmail.com
+                    </a>
+                    <a href="https://www.warhoai.com" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        www.warhoai.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/10 text-center text-gray-600 text-sm">
+        <p>&copy; 2024 WarHo AI Solutions. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

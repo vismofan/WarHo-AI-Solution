@@ -1,17 +1,8 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { CopyVariant, LandingCopy, AssessmentData, StrategicAnalysis } from "../types";
 
-// Helper to get AI instance safely
-const getAI = () => {
-  const apiKey = process.env.API_KEY;
-  if (!apiKey) {
-    console.warn("API Key not found in process.env.API_KEY");
-  }
-  return new GoogleGenAI({ apiKey: apiKey || '' });
-};
-
 export const generateLandingCopy = async (variant: CopyVariant): Promise<LandingCopy> => {
-  const ai = getAI();
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   let targetOption = "";
   switch (variant) {
@@ -97,7 +88,7 @@ export const generateLandingCopy = async (variant: CopyVariant): Promise<Landing
 };
 
 export const analyzeNeeds = async (data: AssessmentData): Promise<StrategicAnalysis> => {
-  const ai = getAI();
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   const prompt = `
     Analyze the following lead for a Small Business Owner interested in WarHo AI:
@@ -136,7 +127,7 @@ export const analyzeNeeds = async (data: AssessmentData): Promise<StrategicAnaly
 };
 
 export const createChatSession = () => {
-  const ai = getAI();
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   return ai.chats.create({
     model: 'gemini-2.5-flash',
     config: {

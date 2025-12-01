@@ -7,6 +7,12 @@ export interface LandingCopy {
     description: string;
   }[];
   assessmentLeadIn: string;
+  heroBadge?: string;
+  valueSection?: {
+    headline: string;
+    subheadline: string;
+    points: string[];
+  };
 }
 
 export interface AssessmentData {

@@ -48,7 +48,9 @@ export const Hero: React.FC<HeroProps> = ({ copy, onCtaClick }) => {
       <div className="container mx-auto px-6 relative z-10 text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-8 backdrop-blur-sm animate-in fade-in slide-in-from-top-4 duration-700 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
           <CircuitBoard size={16} className="text-warho-yellow" />
-          <span className="text-sm font-bold text-white tracking-wide uppercase">Enterprise AI for Small Business</span>
+          <span className="text-sm font-bold text-white tracking-wide uppercase">
+            {copy.heroBadge || "Enterprise AI for Small Business"}
+          </span>
         </div>
 
         <h1 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tight leading-tight max-w-5xl mx-auto animate-in fade-in zoom-in-95 duration-700 delay-100 drop-shadow-2xl">
